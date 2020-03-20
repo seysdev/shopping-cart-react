@@ -1,0 +1,54 @@
+@import './variables';
+
+$frm-ctrl-font-size: 1.2rem;
+$frm-ctrl-padding: 8px 10px;
+$frm-ctrl-margin-bottom: 20px;
+$frm-ctrl-border-with: 1px;
+$frm-ctrl-border-type: solid;
+$frm-ctrl-border-color: #c4c4c4;
+$frm-ctrl-border: $frm-ctrl-border-with $frm-ctrl-border-type $frm-ctrl-border-color;
+
+$frm-label-font-size: 1.1rem;
+
+$frm-border-width: 1px;
+$frm-border-type: solid;
+$frm-border-color: #b9b9b9;
+$frm-border: $frm-border-width $frm-border-type $frm-border-color;
+$frm-padding: $padding;
+
+.frm {
+  border: $frm-border;
+  padding: $frm-padding;
+  border-radius: $border-radius;
+}
+
+input,
+button,
+select {
+  &:focus {
+    outline: none;
+  }
+}
+
+.frm-ctrl[type='text'],
+.frm-ctrl[type='password'],
+.frm-ctrl[select] {
+  width: 100%;
+  padding: $frm-ctrl-padding;
+  border-radius: $border-radius;
+}
+
+.frm-ctrl {
+  margin-bottom: $frm-ctrl-margin-bottom;
+  border: $frm-ctrl-border;
+  font-size: $frm-ctrl-font-size;
+}
+
+.frm-label {
+  font-size: $frm-label-font-size;
+
+  .frm-ctrl {
+    margin: 0;
+    margin-left: 5px;
+  }
+}

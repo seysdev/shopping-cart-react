@@ -1,0 +1,18 @@
+@import '../../../../assets/styles/variables';
+
+$footer-color: white;
+$footer-bg-color: map-get($colors-branding, primary);
+$footer-padding: $padding;
+
+.Footer {
+  padding: $footer-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+  
+  p {
+    margin: 0;
+  }
+}

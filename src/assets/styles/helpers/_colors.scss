@@ -1,0 +1,19 @@
+@import '../variables';
+
+@each $key, $value in $colors-branding {
+  .c-#{$key} {
+    color: $value;
+  }
+}
+
+@each $key, $value in $colors-semantic {
+  .c-#{$key} {
+    color: $value;
+  }
+}
+
+@each $key, $value in $colors-neutrals {
+  .c-#{$key} {
+    color: $value;
+  }
+}

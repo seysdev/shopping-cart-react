@@ -1,0 +1,17 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  
+  &__Header {
+
+  }
+
+  &__Main {
+    flex-grow: 1;
+  }
+
+  &__Footer {
+    
+  }
+}

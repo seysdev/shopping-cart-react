@@ -1,0 +1,8 @@
+@import '../variables';
+@import '../mixings/fonts';
+
+@each $key, $value in $font-sizes {
+  .f-s-#{$key} {
+    @include font-size($value);
+  }
+}

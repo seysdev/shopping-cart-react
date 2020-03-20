@@ -1,0 +1,25 @@
+@import '../../../../assets/styles/variables';
+
+$nav-color: white;
+$nav-padding: $padding;
+$nav-li-margin: 15px;
+$nav-font-size: 13px;
+
+.Nav {
+  color: $nav-color;
+  font-size: $nav-font-size;
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    margin: 0 $nav-li-margin;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

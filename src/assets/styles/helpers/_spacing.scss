@@ -1,0 +1,51 @@
+.m-0 {
+  margin: 0!important;
+}
+
+.m-l-0 {
+  margin-left: 0!important;
+}
+
+.m-t-0 {
+  margin-top: 0!important;
+}
+
+.m-r-0 {
+  margin-right: 0!important;
+}
+
+.m-b-0 {
+  margin-bottom: 0!important;
+}
+
+@for $i from 5 through 20 {
+  .m-#{$i} {
+    margin: #{$i}px!important;
+  }
+
+  .m-l-#{$i} {
+    margin-left: #{$i}px!important;
+  }
+
+  .m-t-#{$i} {
+    margin-left: #{$i}px!important;
+  }
+
+  .m-r-#{$i} {
+    margin-left: #{$i}px!important;
+  }
+
+  .m-b-#{$i} {
+    margin-left: #{$i}px!important;
+  }
+
+  .m-lr-#{$i} {
+    margin-left: #{$i}px!important;
+    margin-right: #{$i}px!important;
+  }
+
+  .m-tb-#{$i} {
+    margin-top: #{$i}px!important;
+    margin-bottom: #{$i}px!important;
+  }
+}

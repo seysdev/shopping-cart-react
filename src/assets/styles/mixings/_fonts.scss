@@ -1,0 +1,13 @@
+@import '../variables';
+
+@mixin font-size($size, $font-size-measure: rem) {
+  @if ($font-size-measure == rem) {
+    font-size: $size#{$font-size-measure};
+  } @else {
+    font-size: ($size * 10) #{$font-size-measure};
+  }
+}
+
+@mixin font-size-type($type) {
+  @include font-size(map-get($font-sizes, $type));
+}

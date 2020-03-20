@@ -1,0 +1,53 @@
+@import './variables';
+
+$btn-padding: 10px;
+$btn-margin: 0 0 $margin-bottom;
+$btn-color-default: map-get($colors-neutrals , white);
+$btn-background-color-default: map-get($colors-branding, default);
+$btn-border-radius: $border-radius;
+
+// primary
+$btn-background-color-primary: map-get($colors-branding, primary);
+
+// secondary 
+$btn-background-color-secondary: map-get($colors-branding, secondary);
+
+// tertiary 
+$btn-background-color-tertiary: map-get($colors-branding, tertiary);
+
+// complementary 
+$btn-background-color-complementary: map-get($colors-branding, complementary);
+
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  margin: $btn-margin;
+  color: $btn-color-default;
+  background-color: $btn-background-color-default;
+  border-radius: $btn-border-radius;
+  cursor: pointer;
+
+  &[disabled] {
+    cursor: default;
+  }
+
+  &.btn-full-width {
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  background-color: $btn-background-color-primary;
+}
+
+.btn-secondary {
+  background-color: $btn-background-color-secondary;
+}
+
+.btn-tertiary {
+  background-color: $btn-background-color-tertiary;
+}
+
+.btn-complementary {
+  background-color: $btn-background-color-complementary;
+}

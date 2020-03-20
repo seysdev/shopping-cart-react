@@ -1,0 +1,55 @@
+@import './variables';
+@import './mixings/fonts';
+
+$title-margin-h1:20px;
+$title-margin-h2:20px;
+$title-margin-h3:20px;
+$title-margin-h4:20px;
+$title-margin-h5:20px;
+$title-margin-h6:20px;
+$title-margin-p: 0 20px;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+}
+
+h1 {
+  @include font-size-type(h1);
+  margin-bottom: $title-margin-h1;
+}
+
+h2 {
+  @include font-size-type(h2);
+  margin-bottom: $title-margin-h1;
+}
+
+h3 {
+  @include font-size-type(h3);
+  margin-bottom: $title-margin-h1;
+}
+
+h4 {
+  @include font-size-type(h4);
+  margin-bottom: $title-margin-h1;
+}
+
+h5 {
+  @include font-size-type(h5);
+  margin-bottom: $title-margin-h1;
+}
+
+h6 {
+  @include font-size-type(h6);
+  margin-bottom: $title-margin-h1;
+}
+
+p {
+  @include font-size-type(p);
+  margin: $title-margin-p;
+}
+

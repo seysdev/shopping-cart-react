@@ -1,0 +1,91 @@
+/*
+* Colors
+*/
+$colors-branding: (
+  primary: green,
+  secondary: red,
+  tertiary: blue,
+  complementary: violet,
+  default: grey
+);
+
+$colors-semantic: (
+  info: blue,
+  danger: yellow,
+  error: red,
+  success: green
+);
+
+$colors-neutrals: (
+  white: white,
+  black: black,
+  grey: grey
+);
+
+$colors-branding-palette: ();
+$colors-semantic-palette: ();
+$colors-neutral-palette: ();
+
+$color-global: #464646; //map-get($colors-neutrals, grey);
+$color-title: map-get($colors-neutrals, black);
+
+/*
+* Font size
+*/
+$font-sizes: (
+  h1: 2.8,
+  h2: 2.4,
+  h3: 2,
+  h4: 1.8,
+  h5: 1.6,
+  h6: 1.4,
+  p: 1.3,
+  xlarge: 2,
+  large: 1.8,
+  medium: 1.6,
+  global: 1.3,
+  small: 1.2,
+  xsmall: 1.1
+);
+
+$font-size-base: 64.5%;
+$font-size-meaure: rem;
+$font-size-body: map-get($font-sizes, global);
+
+/*
+* Font family
+*/
+$font-family-global: arial;
+$font-family-title: verdana;
+$font-family-complementary: monospace;
+$font-family-prominent: '';
+
+/*
+* Margins
+*/
+$margin-value: 20px;
+$margin-top: $margin-value;
+$margin-right: $margin-value;
+$margin-bottom: $margin-value;
+$margin-left: $margin-value;
+$margin: $margin-value;
+
+/*
+* Paddings
+*/
+$padding-value: 20px;
+$padding-top: $padding-value;
+$padding-right: $padding-value;
+$padding-bottom: $padding-value;
+$padding-left: $padding-value;
+$padding: $padding-value;
+
+/*
+* Break Points
+*/
+
+
+/*
+* Border Radius
+*/
+$border-radius: 4px;

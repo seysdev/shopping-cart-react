@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/variables';
+
+$header-color: white;
+$header-bg-color: map-get($colors-branding, primary);
+$header-padding: $padding;
+
+.Header {
+  padding: $header-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-bg-color;
+  color: $header-color;
+}

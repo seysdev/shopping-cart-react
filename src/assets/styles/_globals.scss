@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;  
+}
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: $font-family-global;
+  color: $color-global;
+  @include font-size(1.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
