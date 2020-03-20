@@ -1,3 +1,6 @@
+const faker = require('faker'); // http://marak.github.io/faker.js/
+
+
 const videos = [
   {
     "id": 1,
@@ -5,7 +8,7 @@ const videos = [
     "sources": ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"],
     "subtitle": "By Blender Foundation",
     "thumb": "images/BigBuckBunny.jpg",
-    "title": "Big Buck Bunny"
+    "title": "Big Buck Bunny",
   },
   {
     "id": 2,
@@ -48,7 +51,7 @@ const videos = [
     "title": "For Bigger Joyrides"
   },
   {
-    "id": 7, 
+    "id": 7,
     "description": "Introducing Chromecast. The easiest way to enjoy online video and music on your TV—for when you want to make Buster's big meltdowns even bigger. For $35. Learn how to use Chromecast with Netflix and more at google.com/chromecast.",
     "sources": ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"],
     "subtitle": "By Google",
@@ -104,5 +107,6 @@ const videos = [
     "title": "What care can you get for a grand?"
   }
 ];
+videos.forEach(video => video.price = faker.commerce.price());
 
 module.exports = videos;

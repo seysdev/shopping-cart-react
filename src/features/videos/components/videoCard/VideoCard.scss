@@ -1,0 +1,19 @@
+.VideoCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cdcdcd;
+
+  video {
+    width: 100%;
+    display: block;
+  }
+
+  &__video {
+    border-bottom: 1px solid #cdcdcd;
+  }
+  
+  &__description {
+    padding: 10px;
+    flex-grow: 1;
+  }
+}
