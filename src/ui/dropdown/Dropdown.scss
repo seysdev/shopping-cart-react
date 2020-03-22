@@ -1,0 +1,51 @@
+.dropdown {
+  li {
+    cursor: pointer;
+  }
+
+  ul {
+    > li {
+      position: relative;
+    }
+  }
+
+  &-child {
+    position: absolute;
+    top: 100%;
+    margin-top: 20px;
+    border: 3px solid #03a9f4;
+    background: green;
+    width: 100%;
+    border-radius: 4px;
+    color: white;
+    display: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: 6px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 12px solid #03a9f4;
+    }
+
+    li {
+      border-bottom: 1px solid #03a9f4;
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+    }
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

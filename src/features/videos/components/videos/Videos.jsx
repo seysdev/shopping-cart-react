@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setProducts } from "../../../payment/store/actions";
 
 import { VideoCard } from "../videoCard/VideoCard";
 
@@ -6,6 +8,7 @@ import "./Videos.scss";
 
 function Videos() {
   const [videos, setVideos] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getVideos();
@@ -23,7 +26,8 @@ function Videos() {
   }
 
   function handleBuy(video) {
-    console.log('click!!', video)
+    // console.log("click!!", video);
+    dispatch(setProducts(video));
   }
 
   return (

@@ -15,8 +15,21 @@ $nav-font-size: 13px;
     align-items: center;
   }
 
+  a {
+    padding: 10px 15px;
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    &.is-active {
+      background-color: #03a9f4;
+    }
+  }
+
   li {
-    margin: 0 $nav-li-margin;
+    margin: 0 6px;
 
     &:last-child {
       margin-right: 0;

@@ -16,3 +16,25 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+
+table {
+  border: 1px solid #03a9f4;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #03a9f4;
+}
+
+th {
+  font-weight: bold;
+  text-align: left;
+  font-size: 14px;
+  background: #03a9f4;
+  color: white;
+  border-color: white;
+  border-bottom-color: #03a9f4;
+}
+

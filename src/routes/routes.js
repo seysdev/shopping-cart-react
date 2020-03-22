@@ -1,15 +1,14 @@
 import React from "react";
 import {
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import {
   AuthRoutes,
-  HomeRoutes,
   NotFound,
   PaymentRoutes,
-  UsersRoutes,
   VideosRoutes
 } from "../features";
 
@@ -17,15 +16,18 @@ import {
   PrivateRoute
 } from "./private-route";
 
-const routes = [...AuthRoutes, ...HomeRoutes, ...UsersRoutes, ...VideosRoutes, ...PaymentRoutes];
-
-console.log('routes', routes);
+const routes = [...AuthRoutes, ...VideosRoutes, ...PaymentRoutes];
 
 function MainRoutes() {
   return (
     <Switch>
       {routes.map((route, index) => !route.auth ? <Route {...route} key={index} /> : <PrivateRoute {...route} key={index} />)}
-      <Route>
+      <Redirect
+        from="/"
+        to="/videos"
+        exact
+      />
+      <Route to="*">
         <NotFound />
       </Route>
     </Switch>

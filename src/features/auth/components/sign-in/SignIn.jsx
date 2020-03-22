@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import {
+  setIsLogin,
+  setToken
+} from '../../store/actions';
 
 import "./SignIn.scss";
 
@@ -9,11 +15,15 @@ function SignIn(props) {
     user: "",
     password: ""
   });
+  const dispatch = useDispatch()
 
   function handleSubmit(e) {
     e.preventDefault();
-    sessionStorage.setItem("isLogin", JSON.stringify(dataAccessUser));
-    history.replace("/");
+    sessionStorage.setItem("isLogin", true);
+    sessionStorage.setItem("token", 1234);
+    dispatch(setIsLogin(true));
+    dispatch(setToken(1234));
+    history.replace("/videos");
   }
 
   function handleChange(e) {
@@ -71,5 +81,15 @@ function SignIn(props) {
     </div>
   );
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    increment: () => dispatch({ type: 'INCREMENT' }),
+    decrement: () => dispatch({ type: 'DECREMENT' }),
+    reset: () => dispatch({ type: 'RESET' })
+  }
+};
+
 
 export { SignIn };

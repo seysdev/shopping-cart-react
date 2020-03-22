@@ -1,27 +1,20 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Nav.scss";
 
 function Nav(props) {
   const {
     links = [
       {
-        url: "/",
-        description: "Home"
-      },
-      {
-        url: "/users",
-        description: "Users"
-      },
-      {
         url: "/videos",
         description: "Videos"
       },
       {
         url: "/payment",
-        description: "Payment"
+        description: "Shopping"
       }
     ],
-    className = ''
+    className = ""
   } = props;
 
   return (
@@ -29,9 +22,9 @@ function Nav(props) {
       <ul>
         {links.map(({ url, description }, id) => (
           <li key={id}>
-            <a href={url}>
+            <NavLink to={url} activeClassName="is-active">
               {description}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux';
 import {
   Route,
   Redirect
@@ -6,7 +7,7 @@ import {
 
 
 function PrivateRoute(props) {
-  let isLogin = sessionStorage.getItem("isLogin");
+  const isLogin = useSelector(state => state.AuthReducer.isLogin);
   return (
     <>
       {(isLogin) ?

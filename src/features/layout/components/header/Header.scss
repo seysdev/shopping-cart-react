@@ -1,4 +1,5 @@
 @import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixings/fonts';
 
 $header-color: white;
 $header-bg-color: map-get($colors-branding, primary);
@@ -11,4 +12,13 @@ $header-padding: $padding;
   align-items: center;
   background-color: $header-bg-color;
   color: $header-color;
+
+
+  &__logo {
+    @include font-size-type(xlarge);
+  }
+
+  &__Nav {
+    margin-left: 50px;
+  }
 }
