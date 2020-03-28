@@ -17,7 +17,7 @@ function SignIn(props) {
     user: "",
     password: ""
   });
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function successLogin() {
     sessionStorage.setItem("isLogin", true);
@@ -29,9 +29,8 @@ function SignIn(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(setUser({
-      user: 'Sebastian Yabiku'
-    }))
+    // peticion al servidor!!
+    dispatch(setUser({ name: 'Sebastian Yabiku' }))
     successLogin();
   }
 
@@ -43,9 +42,12 @@ function SignIn(props) {
   }
 
   function onSuccessGoogle(response) {
+    console.log('response', response)
     const {
       profileObj
     } = response;
+
+    // peticion a back end con correo
 
     dispatch(setUser(profileObj))
     successLogin()
@@ -66,6 +68,7 @@ function SignIn(props) {
               type="text"
               name="username"
               placeholder="Usuario"
+              required
               onChange={handleChange}
             />
           </div>
@@ -77,6 +80,7 @@ function SignIn(props) {
               type="password"
               name="password"
               placeholder="Password"
+              required
               onChange={handleChange}
             />
           </div>

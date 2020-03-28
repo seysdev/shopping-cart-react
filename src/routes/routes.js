@@ -17,7 +17,7 @@ import {
 } from "./private-route";
 
 const routes = [...AuthRoutes, ...VideosRoutes, ...PaymentRoutes];
-
+console.log('routes', routes)
 function MainRoutes() {
   return (
     <Switch>

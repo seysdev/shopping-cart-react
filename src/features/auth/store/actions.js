@@ -27,6 +27,7 @@ function logout(payload) {
 }
 
 function setUser(payload) {
+  console.log('payload', payload)
   return {
     type: AUTH_SET_USER,
     payload

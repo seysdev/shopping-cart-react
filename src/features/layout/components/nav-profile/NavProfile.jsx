@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux'
 import { useHistory, Link } from "react-router-dom";
 import { GoogleLogout } from 'react-google-login';
 
@@ -16,6 +17,7 @@ function NavProfile(props) {
   const { className = "" } = props;
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector(state => state.AuthReducer.user);
 
   function logout(e) {
     console.log('logout!!')
@@ -30,25 +32,31 @@ function NavProfile(props) {
     },
     {
       component: (
-        <GoogleLogout
-          clientId="322927841572-n1jacq7k1m60nfjt0hnj4mrb0cql9ih6.apps.googleusercontent.com"
-          onLogoutSuccess={logout}
-          render={(props) => {
-            return <a
-              href="#"
-              onClick={props.onClick}
-            >
-              Logout
-          </a>
-          }}
-        ></GoogleLogout>
+        <>
+          {user.idgoogle ?
+            (<GoogleLogout
+              clientId="322927841572-n1jacq7k1m60nfjt0hnj4mrb0cql9ih6.apps.googleusercontent.com"
+              onLogoutSuccess={logout}
+              render={(props) => {
+                return (<a
+                  href="#"
+                  onClick={props.onClick}
+                >
+                  Logout
+                </a>)
+              }}
+            ></GoogleLogout>)
+            :
+            <Link onClick={logout} to="/sign-in">Logout</Link>}
+        </>
       )
     }
   ];
 
   return (
     <nav className={`NavProfile ${className}`}>
-      <Dropdown description={`Bienvenido Sebastian Yabiku`} links={links} />
+      <img src={`${user.imageUrl}`} alt="" />
+      <Dropdown description={`${user.name}`} links={links} />
     </nav>
   );
 }

@@ -11,6 +11,7 @@ const stripePromise = loadStripe("pk_test_cQnDXCvHofrYQ6cciCFZEOrr00JfzqlZ8v");
 function Payment(props) {
   const products = useSelector(state => state.PaymentReducer.products);
   const onToken = token => {
+    console.log('token', token)
     // fetch("https://localhost:3001", {
     //   method: "POST",
     //   body: JSON.stringify(token)

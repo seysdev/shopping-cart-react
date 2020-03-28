@@ -26,7 +26,7 @@ function Videos() {
   }
 
   function handleBuy(video) {
-    // console.log("click!!", video);
+    console.log("click!!", video);
     dispatch(setProducts(video));
   }
 
