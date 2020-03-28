@@ -5,7 +5,8 @@ import {
 import {
   AUTH_SET_IS_LOGIN,
   AUTH_SET_TOKEN,
-  AUTH_LOGOUT
+  AUTH_LOGOUT,
+  AUTH_SET_USER
 } from './constans';
 
 
@@ -28,6 +29,16 @@ function AuthReducer(state = initialState, action) {
 
       return Object.assign({}, state, {
         token
+      })
+    }
+
+    case AUTH_SET_USER: {
+      const {
+        payload: user
+      } = action;
+
+      return Object.assign({}, state, {
+        user
       })
     }
 

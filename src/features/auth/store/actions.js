@@ -1,7 +1,8 @@
 import {
   AUTH_SET_IS_LOGIN,
   AUTH_SET_TOKEN,
-  AUTH_LOGOUT
+  AUTH_LOGOUT,
+  AUTH_SET_USER
 } from './constans'
 
 function setIsLogin(payload) {
@@ -25,8 +26,16 @@ function logout(payload) {
   }
 }
 
+function setUser(payload) {
+  return {
+    type: AUTH_SET_USER,
+    payload
+  }
+}
+
 export {
   setIsLogin,
   setToken,
-  logout
+  logout,
+  setUser
 }

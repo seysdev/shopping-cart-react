@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { GoogleLogin } from 'react-google-login';
 
 import {
   setIsLogin,
-  setToken
+  setToken,
+  setUser
 } from '../../store/actions';
 
 import "./SignIn.scss";
@@ -17,8 +19,7 @@ function SignIn(props) {
   });
   const dispatch = useDispatch()
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function successLogin() {
     sessionStorage.setItem("isLogin", true);
     sessionStorage.setItem("token", 1234);
     dispatch(setIsLogin(true));
@@ -26,11 +27,32 @@ function SignIn(props) {
     history.replace("/videos");
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(setUser({
+      user: 'Sebastian Yabiku'
+    }))
+    successLogin();
+  }
+
   function handleChange(e) {
     setDataAccessUser({
       ...dataAccessUser,
       [e.target.name]: e.target.value
     });
+  }
+
+  function onSuccessGoogle(response) {
+    const {
+      profileObj
+    } = response;
+
+    dispatch(setUser(profileObj))
+    successLogin()
+  }
+
+  function onFailureGoogle(response) {
+    console.log('response', response)
   }
 
   return (
@@ -64,6 +86,17 @@ function SignIn(props) {
             <button className="btn btn-primary btn-full-width">
               Inicia sesión
             </button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col t-a-center m-b-20">
+            <GoogleLogin
+              clientId="322927841572-n1jacq7k1m60nfjt0hnj4mrb0cql9ih6.apps.googleusercontent.com"
+              buttonText="Ingresar con Google"
+              onSuccess={onSuccessGoogle}
+              onFailure={onFailureGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
           </div>
         </div>
         <div className="row">
