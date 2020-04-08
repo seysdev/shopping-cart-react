@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from 'react-hook-form'
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from 'react-google-login';
@@ -19,6 +20,9 @@ function SignIn(props) {
   });
   const dispatch = useDispatch();
 
+  const { register, handleSubmit, watch, errors } = useForm()
+
+
   function successLogin() {
     sessionStorage.setItem("isLogin", true);
     sessionStorage.setItem("token", 1234);
@@ -27,8 +31,7 @@ function SignIn(props) {
     history.replace("/videos");
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function onSubmit(e) {
     // peticion al servidor!!
     dispatch(setUser({ name: 'Sebastian Yabiku' }))
     successLogin();
@@ -60,7 +63,7 @@ function SignIn(props) {
   return (
     <div className="SignIn">
       <h1 className="t-a-center">Login</h1>
-      <form onSubmit={handleSubmit} className="frm">
+      <form onSubmit={handleSubmit(onSubmit)} className="frm">
         <div className="row">
           <div className="col">
             <input
@@ -68,11 +71,12 @@ function SignIn(props) {
               type="text"
               name="username"
               placeholder="Usuario"
-              required
               onChange={handleChange}
+              ref={register({ required: true })}
             />
           </div>
         </div>
+        {errors.username && <span>El campo usuario es requerido</span>}
         <div className="row">
           <div className="col">
             <input
@@ -80,11 +84,12 @@ function SignIn(props) {
               type="password"
               name="password"
               placeholder="Password"
-              required
               onChange={handleChange}
+              ref={register({ required: true })}
             />
           </div>
         </div>
+        {errors.password && <span>El campo password es requerido</span>}
         <div className="row">
           <div className="col">
             <button className="btn btn-primary btn-full-width">
@@ -114,6 +119,7 @@ function SignIn(props) {
             </a>
           </div>
         </div>
+
       </form>
     </div>
   );

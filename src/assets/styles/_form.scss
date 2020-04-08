@@ -32,7 +32,8 @@ select {
 
 .frm-ctrl[type='text'],
 .frm-ctrl[type='password'],
-.frm-ctrl[select] {
+.frm-ctrl[select],
+.frm-ctrl[type="email"] {
   width: 100%;
   padding: $frm-ctrl-padding;
   border-radius: $border-radius;
